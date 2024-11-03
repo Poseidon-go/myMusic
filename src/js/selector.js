@@ -49,3 +49,7 @@ export function getSearch() {
 export function getBtnSearch() {
     return document.getElementById("btnSearch");
 }
+
+export function getBtnSetting() {
+    return document.getElementById("darkMode");
+}

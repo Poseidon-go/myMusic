@@ -40,7 +40,6 @@ export function handleEventAudio(musicListData) {
     audioElement.addEventListener("loadedmetadata", () => {
         const endTime = Math.floor(audioElement.duration);
         rangeElement.value = 0;
-        audioElement.currentTime = 200;
 
         handleEndTime(endTime)
     })

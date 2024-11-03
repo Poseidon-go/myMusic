@@ -211,6 +211,46 @@ body {
   cursor: pointer;
 }
 
+#Music-player__contents-header-user #settings {
+  position: relative;
+}
+
+
+#Music-player__contents-header-user #settings #settings__dark-mode {
+  width: 250px;
+  height: 100%;
+  padding: 40px;
+
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  position: absolute;
+  left: -180px;
+  top: 60px;
+
+  border-radius: 20px;
+}
+
+#Music-player__contents-header-user #settings #settings__dark-mode div {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+}
+
+#Music-player__contents-header-user #settings #settings__dark-mode .bxs-moon {
+  color: #fff;
+}
+
+#Music-player__contents-header-user #settings #settings__dark-mode span {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--hoverColor);
+
+}
+
+
 
 /* Music-player__contents-banner */
 #Music-player__contents-banner {
@@ -562,3 +602,20 @@ body {
   border: 1px solid #fff;
   cursor: pointer;
 }
+
+
+/* responsive moblie */
+
+@media (max-width:440px) {
+  #Music-player {
+    padding: 0;
+  }
+
+  #Music-player__contents-banner img {
+    display: none;
+  }
+}
+
+
+
+/* responsive pc */

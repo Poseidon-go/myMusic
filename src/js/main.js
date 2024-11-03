@@ -6,6 +6,7 @@ import loadFirstSong from "./audio/loadFirstSong";
 import renderCategoriesList from "./components/categories";
 import musicList from "./data/data";
 import initSearch from "../js/components/populars"
+import showDarkMode from "./html/showDarkMode";
 
 
 // main
@@ -36,6 +37,9 @@ import initSearch from "../js/components/populars"
     updateCurrentTime();
     initSearch(musicListData);
     renderCategoriesList();
+
+    // html
+    showDarkMode();
 
     // điều chỉnh âm lượng
     adjustVolume();
