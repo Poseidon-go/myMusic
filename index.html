@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="./src/assets/images/ui/icon.jpg">
+  <title>Music</title>
+  <!-- font Fredoka -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+    rel="stylesheet">
+
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+    rel='stylesheet'>
+
+  <link rel="stylesheet" href="./src/css/style.css">
+</head>
+
+<body>
+  <div id="app">
+    <div id="Music-player">
+      <div id="Music-player__navbar">
+        <div id="Music-player__navbar-icon">
+          <i class='bx bxs-music'></i>
+          <span>My Music</span>
+        </div>
+
+        <div id="Music-player__navbar-content">
+          <div class="Music-player__navbar-content-home">
+            <i class='bx bx-home-alt-2'></i>
+            <span style="margin-left: 10px;">Home</span>
+          </div>
+
+          <div class="Music-player__navbar-content-categories">
+            <i class='bx bx-category-alt'></i>
+            <span style="margin-left: 10px;">Categories</span>
+          </div>
+
+          <div class="Music-player__navbar-content-artists">
+            <i class='bx bx-user'></i>
+            <span style="margin-left: 10px; ">Artists</span>
+
+          </div>
+
+
+          <div class="Music-player__navbar-content-playlist">
+            <i class='bx bxs-playlist'></i>
+            <span
+              style="margin-left: 10px;  margin-right: 30px;">Playlist</span>
+            <i class='bx bxs-chevron-down'></i>
+          </div>
+
+          <div class="Music-player__navbar-content-logout">
+            <i class='bx bx-log-in'></i>
+            <span style="margin-left: 10px;">Logout</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="Music-player__contents">
+        <div id="Music-player__contents-header">
+          <div id="Music-player__contents-header-sreach">
+            <input id="searchMain" type="search"
+              placeholder="Search for a song">
+            <i class='bx bx-search' id="btnSearch"></i>
+          </div>
+
+          <div id="Music-player__contents-header-user">
+            <div id="user" style="display: flex; align-items: center;">
+              <img width="50px" height="50px"
+                style="object-fit: cover; border-radius: 50px;"
+                src="https://hips.hearstapps.com/hmg-prod/images/cristiano-ronaldo-of-portugal-reacts-as-he-looks-on-during-news-photo-1725633476.jpg?crop=0.666xw:1.00xh;0.180xw,0&resize=1200:*"
+                alt="">
+              <div id="user-single"
+                style="color: var(--colorText); display: flex; flex-direction: column; margin-left: 10px;">
+                <span style="font-weight: 500;">Cr7</span>
+                <span
+                  style="font-size: 12px; color: var(--colorSingle);">Free</span>
+              </div>
+            </div>
+            <div id="likes">
+              <i class='bx bxs-heart'></i>
+            </div>
+            <div id="settings">
+              <i class='bx bx-cog'></i>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="Music-player__contents-banner">
+          <img width="100%" height="180px" style="object-fit: cover;"
+            src="./src/assets/images/ui/banner1.jpg" alt="">
+        </div>
+
+        <div id="Music-player__contents-trending">
+          <div id="Music-player__contents-trending-categories">
+            <h1>Select Categories</h1>
+
+            <div id="categories-list">
+
+            </div>
+          </div>
+          <div id="Music-player__contents-trending-popular">
+            <h1>Popular Songs</h1>
+
+            <div id="popular-list">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="Music-control">
+      <div id="Music-control__info">
+        <img width="40px" height="40px" style="border-radius: 50px;" src=""
+          alt="">
+
+        <div id="Music-control__info-single">
+          <span class="song"></span>
+          <span class="single" style="font-size: 12px;"></span>
+        </div>
+      </div>
+
+      <div id="Music-control__play">
+        <div id="Music-control__play-nowplay">
+          <i class='bx bx-skip-previous' id="prev"></i>
+          <i class='bx bx-play'></i>
+          <i class='bx bx-skip-next' id="next"></i>
+        </div>
+
+        <div id="Music-control__play-timeline">
+          <span id="start"></span>
+          <input type="range" min="0" max="100" value="0" class="range"
+            id="myRange">
+
+          <span id="end"></span>
+        </div>
+        <audio controls id="playMusic" style="display: none;">
+          <source src="" type="audio/mpeg">
+        </audio>
+
+        <div id="Music-control__play-func">
+          <i class='bx bx-heart'></i>
+          <i class='bx bx-shuffle' id="shuffle"></i>
+          <i class='bx bx-sync' id="repeat"></i>
+          <div id="volume">
+            <i class='bx bx-volume-full'></i>
+            <input type="range" name="" id="setVolume" min="0" max="100"
+              value="0">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>
