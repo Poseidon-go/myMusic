@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "boxicons": "^2.1.4",
+    "dotenv": "^16.4.5",
+    "firebase": "^11.0.1",
     "font-awesome": "^4.7.0"
   }
 }
