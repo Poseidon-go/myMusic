@@ -1,4 +1,5 @@
 import { GetAudioElement, getBtnPlay, getNextElement, getPrevElement, getRepeatElement, getShuffleElement } from "../selector";
+import { getCurrentSongIndex, setCurrentSongIndex } from "../state/state";
 import updateStatusCurrentSong from "../utils/updateUserplayer";
 
 function initializeControls() {
@@ -43,6 +44,7 @@ export function toggleRepeat() {
     function handleRepeat() {
         isRepeat = !isRepeat;
 
+
         repeatElement.style.color = isRepeat ? `var(--activeColor)` : `var(--colorText)`;
 
         audioElement.loop = isRepeat ? true : false;
@@ -61,6 +63,9 @@ export function togglePrevNext(musicList, currentSongIndex) {
 
             updateStatusCurrentSong(musicList[currentSongIndex]);
 
+            // lưu giá trị index hiện tại vào local
+            setCurrentSongIndex(currentSongIndex);
+
             // bật lại bài hát khi click vào nút chuyển bài hát 
             audioElement.play();
         } else return;
@@ -72,6 +77,9 @@ export function togglePrevNext(musicList, currentSongIndex) {
             audioElement.src = musicList[currentSongIndex].path;
 
             updateStatusCurrentSong(musicList[currentSongIndex]);
+
+            // lưu giá trị index hiện tại vào local
+            setCurrentSongIndex(currentSongIndex);
 
             // bật lại bài hát khi click vào nút lùi bài hát 
             audioElement.play();
@@ -102,7 +110,9 @@ export function toggleRandomMusic(musicListData) {
     // Hàm phát bài hát ngẫu nhiên
     function playRandomSong() {
         let randomIndex = Math.floor(Math.random() * songLength);
+        setCurrentSongIndex(randomIndex);
         let randomSong = musicListData[randomIndex];
+
 
         audioElement.src = randomSong.path;  // Đường dẫn bài hát ngẫu nhiên
         updateStatusCurrentSong(randomSong); // Cập nhật trạng thái bài hát hiện tại

@@ -12,6 +12,8 @@
   --activeColor: #c0392b;
 }
 
+.darkMode {}
+
 *,
 *::after,
 *::before {
@@ -92,7 +94,6 @@ body {
 
 .Music-player__navbar-content-categories {}
 
-.Music-player__navbar-content-artists {}
 
 .Music-player__navbar-content-playlist {}
 
@@ -102,7 +103,6 @@ body {
 
 .Music-player__navbar-content-home,
 .Music-player__navbar-content-categories,
-.Music-player__navbar-content-artists,
 .Music-player__navbar-content-playlist,
 .Music-player__navbar-content-logout {
   display: flex;
@@ -119,8 +119,6 @@ body {
 .Music-player__navbar-content-home span,
 .Music-player__navbar-content-categories i,
 .Music-player__navbar-content-categories span,
-.Music-player__navbar-content-artists i,
-.Music-player__navbar-content-artists span,
 .Music-player__navbar-content-playlist i,
 .Music-player__navbar-content-playlist span,
 .Music-player__navbar-content-logout i,
@@ -130,7 +128,6 @@ body {
 
 .Music-player__navbar-content-home:hover,
 .Music-player__navbar-content-categories:hover,
-.Music-player__navbar-content-artists:hover,
 .Music-player__navbar-content-playlist:hover,
 .Music-player__navbar-content-logout:hover {
   background-color: var(--hoverColor);
@@ -141,8 +138,6 @@ body {
 .Music-player__navbar-content-home:hover span,
 .Music-player__navbar-content-categories:hover i,
 .Music-player__navbar-content-categories:hover span,
-.Music-player__navbar-content-artists:hover i,
-.Music-player__navbar-content-artists:hover span,
 .Music-player__navbar-content-playlist:hover i,
 .Music-player__navbar-content-playlist:hover span,
 .Music-player__navbar-content-logout:hover i,
@@ -311,6 +306,21 @@ body {
 
 }
 
+/* #Music-player__contents-header-user #likes  */
+#Music-player__contents-header-user #likes {
+  position: relative;
+}
+
+#Music-player__contents-header-user #likes span {
+  position: absolute;
+  left: 55px;
+  top: -11px;
+  right: 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--colorAvatar);
+}
+
 
 
 /* Music-player__contents-banner */
@@ -435,6 +445,7 @@ body {
   height: 10%;
   padding: 10px 20px;
 
+  overflow: hidden;
   background-color: var(--SecondarybackGroundColor);
 }
 
@@ -678,11 +689,23 @@ body {
   }
 
   #Music-player__contents-header-user #user {
+
     display: none;
   }
 
   #Music-player__contents-header-user #settings {
     display: none;
+  }
+
+  /* Music-player__contents-header */
+  #Music-player__contents-header {
+    display: block;
+  }
+
+  #Music-player__contents-header-sreach {
+    width: 100%;
+    border-radius: 0px;
+    margin-right: 1000px;
   }
 
   #Music-player__navbar {

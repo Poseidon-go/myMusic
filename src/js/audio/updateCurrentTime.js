@@ -10,10 +10,10 @@ export default function updateCurrentTime() {
 
 
     audioElement.addEventListener("timeupdate", () => {
+
         const songLength = Math.floor(audioElement.duration);
         const currentTime = Math.floor(audioElement.currentTime);
         let currentRange = Math.floor((100 * currentTime) / songLength);
-
         handleEndTime(songLength);
         handleStartTime(currentTime)
 

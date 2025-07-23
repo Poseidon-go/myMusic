@@ -1,6 +1,7 @@
 // import "dotenv/config.js";
 import updateCurrentTime from "../js/audio/updateCurrentTime";
-import initSearch from "../js/components/populars";
+import { popularUI } from "../js/components/populars";
+import handleRoutingsPages from "../router/router";
 import { handleEventAudio } from "./audio/handleEventAudio";
 import { togglePlayAudio, togglePrevNext, toggleRandomMusic, toggleRepeat } from "./audio/handleToggle";
 import adjustVolume from "./audio/handleVolume";
@@ -10,17 +11,19 @@ import musicList from "./data/data";
 import showDarkMode from "./html/showDarkMode";
 import showLoginUser from "./html/showLoginUser";
 import showMenuMobile from "./html/showMenuMobile";
+import { getCurrentSongIndex, setCurrentSongIndex } from "./state/state";
+import updateLikes from "./utils/updateLikes";
 // main.js
 
+let currentSongIndex = getCurrentSongIndex("index") || 0;
 
 // main
 (() => {
+
     let musicListData = musicList;
-    let currentSongIndex = 0;
 
-    // const auths = auth;
-    // console.log(auths);
-
+    // router
+    handleRoutingsPages();
 
     // load bài đầu tiên
     loadFirstSong(musicListData, currentSongIndex);
@@ -43,8 +46,10 @@ import showMenuMobile from "./html/showMenuMobile";
 
     // renderUI
     updateCurrentTime();
-    initSearch(musicListData);
     renderCategoriesList();
+    updateLikes(musicListData, currentSongIndex);
+    // showPopularList
+    popularUI(musicListData);
 
     // html
     showDarkMode();

@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./src/assets/images/ui/icon.jpg">
+    <title>Music</title>
+    <!-- font Fredoka -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap"
+        rel="stylesheet">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+        rel='stylesheet'>
+
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/likes.css">
+</head>
+
+<body>
+    <div id="app">
+        <div id="Music-player">
+            <!-- Side Bar -->
+            <div id="Music-player__navbar">
+                <div id="Music-player__navbar-icon">
+                    <i class='bx bxs-music'></i>
+                    <span>My Music</span>
+                </div>
+
+                <!-- nav mobile -->
+                <div id="Music-player__navbar-menu">
+                    <i class='bx bx-menu'></i>
+                </div>
+
+                <nav id="Music-player__navbar-content">
+                    <div id="Music-player__navbar-content-func">
+                        <div class="Music-player__navbar-content-home"
+                            id="home">
+                            <i class='bx bx-home-alt-2'></i>
+                            <span style="margin-left: 10px;">Home</span>
+                        </div>
+                        <div class="Music-player__navbar-content-categories"
+                            id="myPlayLists">
+                            <i class='bx bx-heart-circle'></i>
+                            <span style="margin-left: 10px;">Playlist</span>
+                        </div>
+                    </div>
+
+
+
+                    <div class="Music-player__navbar-content-logout">
+                        <i class='bx bx-log-in'></i>
+                        <span style="margin-left: 10px;">Logout</span>
+                    </div>
+                </nav>
+            </div>
+
+            <!-- Side Bar mobile -->
+            <div class="Music-player__navbar-menu-mobile">
+                <div id="settings-mobile">
+                    <i class='bx bx-cog'></i>
+
+                    <div id="settings-mobile__dark-mode">
+                        <span>Dark Mode</span>
+                        <div>
+                            <i class='bx bxs-moon'></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="likes-mobile">
+                    <i class='bx bxs-heart'></i>
+                </div>
+            </div>
+
+
+            <header id="Music-player__contents">
+                <!-- Header -->
+                <div id="Music-player__contents-header">
+                    <div id="Music-player__contents-header-sreach">
+                        <input id="searchMain" type="search"
+                            placeholder="Search for a song">
+                        <i class='bx bx-search' id="btnSearch"></i>
+                    </div>
+
+                    <div id="Music-player__contents-header-user">
+                        <div id="user">
+                            <div id="user_avatar">
+                                <img width="50px" height="50px"
+                                    style="object-fit: cover; border-radius: 50px;"
+                                    src="https://i.pinimg.com/564x/67/93/2b/67932b23344077670026ea06c06afcec.jpg"
+                                    alt="">
+
+                                <div id="user_avatar-login">
+                                    <div>
+                                        <i class='bx bxl-google'></i>
+                                        <span>Login to Google</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="user_single"
+                                style="color: var(--colorText); display: flex; flex-direction: column; margin-left: 10px;">
+                                <span style="font-weight: 500;">Un</span>
+                                <span
+                                    style="font-size: 12px; color: var(--colorSingle);">Free</span>
+                            </div>
+                        </div>
+                        <div id="likes">
+                            <i class='bx bxs-heart'></i>
+                            <span></span>
+                        </div>
+                        <div id="settings">
+                            <i class='bx bx-cog' id="darkMode"></i>
+
+                            <div id="settings__dark-mode">
+                                <span>Dark Mode</span>
+                                <div>
+                                    <i class='bx bxs-moon'
+                                        id="darkModeToggle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Content -->
+                <div id="Music-player__contents-contents">
+                    <h1 style="color: #fff;">Song Favorite:</h1>
+
+
+                    <div id="Music-player__contents-contents-Myplaylist">
+                        <div id="Myplaylist-item">
+                            <div id="Myplaylist-item__user">
+                                <img src="src/assets/images/emcuangayhomquaIMG.png"
+                                    alt="" width="50px" height="50px">
+                                <div id="Myplaylist-item__user-single">
+                                    <span>Em của ngày hôm qua</span>
+                                    <span>Sơn Tùng MTP</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Myplaylist-item">
+                            <div id="Myplaylist-item__user">
+                                <img src="src/assets/images/emcuangayhomquaIMG.png"
+                                    alt="" width="50px" height="50px">
+                                <div id="Myplaylist-item__user-single">
+                                    <span>Em của ngày hôm qua</span>
+                                    <span>Sơn Tùng MTP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+
+        <!-- Footer control -->
+        <footer id="Music-control">
+            <div id="Music-control__info">
+                <img width="40px" height="40px" style="border-radius: 50px;"
+                    src="" alt="">
+
+                <div id="Music-control__info-single">
+                    <span class="song"></span>
+                    <span class="single" style="font-size: 12px;"></span>
+                </div>
+            </div>
+
+            <div id="Music-control__play">
+                <div id="Music-control__play-nowplay">
+                    <i class='bx bx-skip-previous' id="prev"></i>
+                    <i class='bx bx-play'></i>
+                    <i class='bx bx-skip-next' id="next"></i>
+                </div>
+
+                <div id="Music-control__play-timeline">
+                    <span id="start"></span>
+                    <input type="range" min="0" max="100" value="0"
+                        class="range" id="myRange">
+                    <span id="end"></span>
+                </div>
+                <audio controls id="playMusic" style="display: none;">
+                    <source src="" type="audio/mpeg">
+                </audio>
+
+                <div id="Music-control__play-func">
+                    <i class='bx bx-heart' id="toggleHeart"></i>
+                    <i class='bx bx-shuffle' id="shuffle"></i>
+                    <i class='bx bx-sync' id="repeat"></i>
+                    <div id="volume">
+                        <i class='bx bx-volume-full'></i>
+                        <input type="range" name="" id="setVolume" min="0"
+                            max="100" value="0">
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script type="module" src="./src/js/main.js"></script>
+</body>
+
+</html>

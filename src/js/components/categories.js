@@ -1,17 +1,18 @@
 const categoriesList = [
-    "All",
-    "Relax",
-    "Sad",
-    "Party",
-    "Romantic",
-    "Rap",
-    "Battles",
+    "all",
+    "relax",
+    "sad",
+    "party",
+    "romantic",
+    "rap",
+    "battles",
 ]
 
 function renderCategorie(text) {
     const divElement = document.createElement("div");
     divElement.className = "box";
-    divElement.innerHTML = `<span class="text">${text}</span>`
+    divElement.dataset.category = text;
+    divElement.innerHTML = `<span class="text">${text.toUpperCase()}</span>`
 
     return divElement;
 }
