@@ -20,7 +20,7 @@ export default function adjustVolume() {
         // audio.volume <=> volume.value
         const valueVolume = volumeElement.value;
         const currentVolume = valueVolume / 100;
-        audioElement.volume = currentVolume.toFixed(1);
+        audioElement.volume = parseFloat(currentVolume.toFixed(1));
 
         volumeElement.style.background = `linear-gradient(to right, #fff ${valueVolume}%, #6e6e6e ${valueVolume}%)`
     })
