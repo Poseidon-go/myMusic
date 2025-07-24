@@ -17,6 +17,7 @@
     rel='stylesheet'>
 
   <link rel="stylesheet" href="./src/css/style.css">
+  <link rel="stylesheet" href="./src/css/mobile.css">
 </head>
 
 <body>
@@ -35,6 +36,10 @@
         </div>
 
         <nav id="Music-player__navbar-content">
+          <div class="mobile-menu-close">
+            <i class='bx bx-x'></i>
+          </div>
+
           <div id="Music-player__navbar-content-func">
             <div class="Music-player__navbar-content-home" id="home">
               <i class='bx bx-home-alt-2'></i>
@@ -47,13 +52,14 @@
             </div>
           </div>
 
-
-
           <div class="Music-player__navbar-content-logout">
             <i class='bx bx-log-in'></i>
             <span style="margin-left: 10px;">Logout</span>
           </div>
         </nav>
+
+        <!-- Mobile Overlay -->
+        <div class="mobile-overlay"></div>
       </div>
 
       <!-- Side Bar mobile -->
@@ -106,6 +112,14 @@
                   style="font-size: 12px; color: var(--colorSingle);">Free</span>
               </div>
             </div>
+
+            <!-- Mobile Actions -->
+            <div class="mobile-actions">
+              <i class='bx bxs-heart' id="mobile-likes"></i>
+              <i class='bx bx-cog' id="mobile-settings"></i>
+            </div>
+
+            <!-- Desktop Actions -->
             <div id="likes">
               <i class='bx bxs-heart'></i>
               <span></span>
@@ -148,9 +162,9 @@
       </header>
     </div>
 
-
     <!-- Footer control -->
     <footer id="Music-control">
+      <!-- Desktop Music Control -->
       <div id="Music-control__info">
         <img width="40px" height="40px" style="border-radius: 50px;" src=""
           alt="">
@@ -189,9 +203,41 @@
           </div>
         </div>
       </div>
+
+      <!-- Mobile Music Control -->
+      <div class="mobile-music-info">
+        <div class="mobile-song-info">
+          <img width="35px" height="35px" style="border-radius: 8px;" src=""
+            alt="" id="mobile-song-img">
+          <div class="mobile-song-details">
+            <span class="song">No song selected</span>
+            <span class="single">Artist</span>
+          </div>
+        </div>
+        <div class="mobile-play-controls">
+          <i class='bx bx-skip-previous' id="mobile-prev"></i>
+          <i class='bx bx-play' id="mobile-play"></i>
+          <i class='bx bx-skip-next' id="mobile-next"></i>
+        </div>
+      </div>
+
+      <div class="mobile-play-controls">
+        <i class='bx bx-skip-previous' id="mobile-prev"></i>
+        <i class='bx bx-play' id="mobile-play"></i>
+        <i class='bx bx-skip-next' id="mobile-next"></i>
+      </div>
+
+      <!-- Mobile Timeline -->
+      <div class="mobile-timeline">
+        <span id="mobile-start">0:00</span>
+        <input type="range" min="0" max="100" value="0" class="range"
+          id="mobile-range">
+        <span id="mobile-end">0:00</span>
+      </div>
     </footer>
   </div>
   <script type="module" src="./src/js/main.js"></script>
+  <script type="module" src="./src/js/mobile.js"></script>
 </body>
 
 </html>

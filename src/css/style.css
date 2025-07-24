@@ -38,7 +38,7 @@ body {
 /* #Music-player */
 #Music-player {
   display: flex;
-  height: 90%;
+  height: 90vh;
   padding: 20px;
   background-color: var(--backGroundColor);
 }
@@ -149,6 +149,19 @@ body {
 /* Music-player__navbar-menu-mobile */
 .Music-player__navbar-menu-mobile {
   display: none;
+}
+
+/* Mobile elements hidden on desktop */
+@media only screen and (min-width: 769px) {
+
+  .mobile-actions,
+  .mobile-music-info,
+  .mobile-play-controls,
+  .mobile-timeline,
+  .mobile-overlay,
+  .mobile-menu-close {
+    display: none !important;
+  }
 }
 
 /* #Music-player__content */
@@ -438,11 +451,10 @@ body {
 
 /* #Music-control*/
 #Music-control {
-  position: fixed;
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 10%;
+  height: 10vh;
   padding: 10px 20px;
 
   overflow: hidden;
@@ -676,96 +688,4 @@ body {
 }
 
 
-/* responsive moblie */
-
-@media only screen and (max-width:439px) {
-  #Music-player {
-    height: 80%;
-    display: block;
-  }
-
-  #Music-player__contents-header-user #likes {
-    display: none;
-  }
-
-  #Music-player__contents-header-user #user {
-
-    display: none;
-  }
-
-  #Music-player__contents-header-user #settings {
-    display: none;
-  }
-
-  /* Music-player__contents-header */
-  #Music-player__contents-header {
-    display: block;
-  }
-
-  #Music-player__contents-header-sreach {
-    width: 100%;
-    border-radius: 0px;
-    margin-right: 1000px;
-  }
-
-  #Music-player__navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    height: auto;
-
-    border-radius: 20px 20px 0px 0px;
-  }
-
-  #Music-player__navbar-icon {
-    margin-bottom: 0px;
-
-    cursor: pointer;
-  }
-
-  #Music-player__navbar-menu {
-    display: block;
-  }
-
-
-  .Music-player__navbar-menu-mobile {
-    display: none;
-    padding: 20px;
-
-
-    background-color: var(--SecondarybackGroundColor);
-  }
-
-  .Music-player__navbar-menu-mobile #settings i {
-    font-size: 30px;
-  }
-
-  #Music-player__navbar-content {
-    display: none;
-  }
-
-
-  #Music-player__contents-banner {
-    display: none;
-  }
-
-  /* #Music-control */
-
-  #Music-control {
-    height: 20%;
-    flex-direction: column;
-  }
-
-  /* #Music-control__play  */
-  #Music-control__play {
-    flex-direction: column;
-  }
-
-}
-
-
-
-/* responsive tablet */
-
-@media only screen and (min-width:440px) and (min-width:1000px) {}
+/* Responsive styles are now handled in mobile.css */

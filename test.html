@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .carousel {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            overflow: hidden;
+            margin: auto;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #00000088;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #prevBtn {
+            left: 0;
+        }
+
+        #nextBtn {
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel">
+        <div class="carousel-track">
+            <img src="https://media.vietnamplus.vn/images/92ffd2b8d642377b307369f5e8102f610c5d67a9e8b3092350e19c525d687c16c2264d854414293aa5998fded2c0a93f06515ab060142739632fb09da952fbc2/ronaldo-the-ky-21-1-5129.jpg"
+                class="carousel-item" />
+            <img src="https://media.vietnamplus.vn/images/4359a3df9b251435296fbde0195654ba0c5d67a9e8b3092350e19c525d687c16c2264d854414293aa5998fded2c0a93f6086016388c71e84f641563f8fe7c234/ronaldo-the-ky-21-8-1189.jpg"
+                class="carousel-item" />
+            <img src="img3.jpg" class="carousel-item" />
+        </div>
+
+        <button id="prevBtn">‹</button>
+        <button id="nextBtn">›</button>
+    </div>
+
+</body>
+
+</html>
