@@ -159,8 +159,66 @@ body {
   .mobile-play-controls,
   .mobile-timeline,
   .mobile-overlay,
-  .mobile-menu-close {
+  .mobile-menu-close,
+  .mobile-slideshow-nav,
+  .mobile-slideshow-dots {
     display: none !important;
+  }
+
+  /* Desktop popular list - restore original grid */
+  #popular-list {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 20px !important;
+    overflow: visible !important;
+    padding: 0 !important;
+  }
+
+  #popular-list__item {
+    width: 162px !important;
+    min-width: auto !important;
+    height: 210px !important;
+    background-color: rgba(46, 204, 113, 0.6) !important;
+    border: none !important;
+  }
+}
+
+/* Mobile elements shown on mobile */
+@media only screen and (max-width: 768px) {
+
+  .mobile-actions,
+  .mobile-overlay,
+  .mobile-menu-close,
+  .mobile-slideshow-nav,
+  .mobile-slideshow-dots {
+    display: block;
+  }
+
+  /* Mobile music control enhancements */
+  #Music-control {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: auto;
+    min-height: 80px;
+    padding: 12px 16px;
+    background-color: var(--SecondarybackGroundColor);
+    border-top: 1px solid var(--hoverColor);
+  }
+
+  /* Hide desktop controls on mobile */
+  #Music-control__info,
+  #Music-control__play {
+    display: none !important;
+  }
+
+  /* Show mobile controls */
+  .mobile-control-container {
+    display: flex !important;
+    flex-direction: column;
+    gap: 8px;
   }
 }
 
@@ -235,6 +293,11 @@ body {
 
 #Music-player__contents-header-user img {
   cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+#Music-player__contents-header-user img.loading {
+  opacity: 0.5;
 }
 
 #Music-player__contents-header-user #user {
@@ -248,75 +311,63 @@ body {
 
 #Music-player__contents-header-user #user_avatar #user_avatar-login {
   width: 250px;
-  height: 100%;
-  padding: 40px;
+  height: auto;
+  padding: 20px;
 
-  display: none;
+  display: none !important;
+  /* Force hide by default */
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background-color: #fff;
   position: absolute;
   left: -199px;
   top: 58px;
 
-  border-radius: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--hoverColor);
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+/* Show login popup when active */
+#Music-player__contents-header-user #user_avatar #user_avatar-login.show {
+  display: flex !important;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 #Music-player__contents-header-user #user_avatar #user_avatar-login div {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background-color: var(--colorAvatar);
+  border-radius: 10px;
   cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
 }
 
 #Music-player__contents-header-user #user_avatar #user_avatar-login div span {
-  color: var(--colorAvatar);
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
 }
 
 #Music-player__contents-header-user #user_avatar #user_avatar-login i {
   background-color: transparent;
-  color: var(--colorAvatar);
-}
-
-
-#Music-player__contents-header-user #settings {
-  position: relative;
-}
-
-
-#Music-player__contents-header-user #settings #settings__dark-mode {
-  width: 250px;
-  height: 100%;
-  padding: 40px;
-
-  display: none;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #fff;
-  position: absolute;
-  left: -180px;
-  top: 60px;
-
-  border-radius: 20px;
-}
-
-#Music-player__contents-header-user #settings #settings__dark-mode div {
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
-}
-
-#Music-player__contents-header-user #settings #settings__dark-mode .bxs-moon {
   color: #fff;
+  font-size: 18px;
 }
 
-#Music-player__contents-header-user #settings #settings__dark-mode span {
-  display: inline-block;
-  font-size: 20px;
-  font-weight: 500;
-  color: var(--hoverColor);
-
+#Music-player__contents-header-user #user_avatar #user_avatar-login div:hover {
+  background-color: #d4621a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(236, 116, 26, 0.4);
 }
 
 /* #Music-player__contents-header-user #likes  */

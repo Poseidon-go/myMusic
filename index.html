@@ -45,11 +45,6 @@
               <i class='bx bx-home-alt-2'></i>
               <span style="margin-left: 10px;">Home</span>
             </div>
-            <div class="Music-player__navbar-content-categories"
-              id="myPlayLists">
-              <i class='bx bx-heart-circle'></i>
-              <span style="margin-left: 10px;">Playlist</span>
-            </div>
           </div>
 
           <div class="Music-player__navbar-content-logout">
@@ -60,24 +55,6 @@
 
         <!-- Mobile Overlay -->
         <div class="mobile-overlay"></div>
-      </div>
-
-      <!-- Side Bar mobile -->
-      <div class="Music-player__navbar-menu-mobile">
-        <div id="settings-mobile">
-          <i class='bx bx-cog'></i>
-
-          <div id="settings-mobile__dark-mode">
-            <span>Dark Mode</span>
-            <div>
-              <i class='bx bxs-moon'></i>
-            </div>
-          </div>
-        </div>
-
-        <div id="likes-mobile">
-          <i class='bx bxs-heart'></i>
-        </div>
       </div>
 
 
@@ -107,7 +84,7 @@
               </div>
               <div id="user_single"
                 style="color: var(--colorText); display: flex; flex-direction: column; margin-left: 10px;">
-                <span style="font-weight: 500;">Un</span>
+                <span style="font-weight: 500;">Guest</span>
                 <span
                   style="font-size: 12px; color: var(--colorSingle);">Free</span>
               </div>
@@ -116,23 +93,12 @@
             <!-- Mobile Actions -->
             <div class="mobile-actions">
               <i class='bx bxs-heart' id="mobile-likes"></i>
-              <i class='bx bx-cog' id="mobile-settings"></i>
             </div>
 
             <!-- Desktop Actions -->
             <div id="likes">
               <i class='bx bxs-heart'></i>
               <span></span>
-            </div>
-            <div id="settings">
-              <i class='bx bx-cog' id="darkMode"></i>
-
-              <div id="settings__dark-mode">
-                <span>Dark Mode</span>
-                <div>
-                  <i class='bx bxs-moon' id="darkModeToggle"></i>
-                </div>
-              </div>
             </div>
           </div>
 
@@ -155,7 +121,23 @@
           <div id="Music-player__contents-trending-popular">
             <h1>Popular Songs</h1>
 
-            <div id="popular-list">
+            <div class="mobile-popular-container">
+              <div id="popular-list">
+              </div>
+
+              <!-- Mobile Slideshow Navigation -->
+              <div class="mobile-slideshow-nav">
+                <button class="mobile-slideshow-btn" id="popular-prev">
+                  <i class='bx bx-chevron-left'></i>
+                </button>
+                <button class="mobile-slideshow-btn" id="popular-next">
+                  <i class='bx bx-chevron-right'></i>
+                </button>
+              </div>
+
+              <!-- Mobile Slideshow Dots -->
+              <div class="mobile-slideshow-dots" id="popular-dots">
+              </div>
             </div>
           </div>
         </div>
@@ -205,39 +187,48 @@
       </div>
 
       <!-- Mobile Music Control -->
-      <div class="mobile-music-info">
-        <div class="mobile-song-info">
-          <img width="35px" height="35px" style="border-radius: 8px;" src=""
-            alt="" id="mobile-song-img">
-          <div class="mobile-song-details">
-            <span class="song">No song selected</span>
-            <span class="single">Artist</span>
+      <div class="mobile-control-container">
+        <!-- Mobile Song Info Row -->
+        <div class="mobile-music-info">
+          <div class="mobile-song-info">
+            <img width="40px" height="40px"
+              style="border-radius: 8px; object-fit: cover;"
+              src="https://via.placeholder.com/40x40/313237/ffffff?text=♪"
+              alt="Song cover" id="mobile-song-img">
+            <div class="mobile-song-details">
+              <span class="song">Select a song</span>
+              <span class="single">Artist</span>
+            </div>
+          </div>
+          <div class="mobile-play-controls">
+            <i class='bx bx-skip-previous' id="mobile-prev"></i>
+            <i class='bx bx-play' id="mobile-play"></i>
+            <i class='bx bx-skip-next' id="mobile-next"></i>
           </div>
         </div>
-        <div class="mobile-play-controls">
-          <i class='bx bx-skip-previous' id="mobile-prev"></i>
-          <i class='bx bx-play' id="mobile-play"></i>
-          <i class='bx bx-skip-next' id="mobile-next"></i>
+
+        <!-- Mobile Timeline Row -->
+        <div class="mobile-timeline">
+          <span id="mobile-start">0:00</span>
+          <input type="range" min="0" max="100" value="0" class="range"
+            id="mobile-range">
+          <span id="mobile-end">0:00</span>
         </div>
-      </div>
 
-      <div class="mobile-play-controls">
-        <i class='bx bx-skip-previous' id="mobile-prev"></i>
-        <i class='bx bx-play' id="mobile-play"></i>
-        <i class='bx bx-skip-next' id="mobile-next"></i>
-      </div>
-
-      <!-- Mobile Timeline -->
-      <div class="mobile-timeline">
-        <span id="mobile-start">0:00</span>
-        <input type="range" min="0" max="100" value="0" class="range"
-          id="mobile-range">
-        <span id="mobile-end">0:00</span>
+        <!-- Mobile Hidden Controls (sync with desktop) -->
+        <div class="mobile-hidden-controls" style="display: none;">
+          <i class='bx bx-heart' id="mobile-toggleHeart"></i>
+          <i class='bx bx-shuffle' id="mobile-shuffle"></i>
+          <i class='bx bx-sync' id="mobile-repeat"></i>
+          <input type="range" id="mobile-setVolume" min="0" max="100"
+            value="50">
+        </div>
       </div>
     </footer>
   </div>
   <script type="module" src="./src/js/main.js"></script>
-  <script type="module" src="./src/js/mobile.js"></script>
+  <script type="module" src="./src/js/mobile-new.js"></script>
+  <script type="module" src="./src/js/auth-main.js"></script>
 </body>
 
 </html>
